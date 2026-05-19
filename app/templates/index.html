@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ParallelLife // Alternate Timelines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/styles.css?v=20260515a" />
+  </head>
+  <body>
+    <div class="grid-overlay"></div>
+    <div id="loading_overlay" class="loading-overlay hidden">
+      <div class="loading-panel">
+        <h3>Simulating Parallel Timelines</h3>
+        <p id="loading_stage">Initializing scenario engine...</p>
+        <div class="loading-track">
+          <div id="loading_bar" class="loading-bar"></div>
+        </div>
+        <p id="loading_pct" class="loading-pct">0%</p>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="brand">PARALLEL://LIFE <span>ALT_TIMELINES</span></div>
+      <div class="online">SYS: READY</div>
+    </header>
+
+    <main class="wrap">
+      <section class="search-shell reveal">
+        <h1>GENERATE ALTERNATE<br />VERSIONS OF YOU</h1>
+        <p>Run a viral-ready simulation of how your life shifts under new choices.</p>
+
+        <form id="simulate-form" class="command-row">
+          <input id="age" name="age" type="number" min="0" max="120" placeholder="> AGE" required />
+          <input id="country" name="country" type="text" placeholder="> COUNTRY" required />
+          <input id="career" name="career" type="text" placeholder="> CAREER" required />
+          <input id="salary" name="salary" type="number" placeholder="> SALARY (USD/YEAR, OPTIONAL)" />
+          <input id="habits" name="habits" type="text" placeholder="> HABITS" required />
+          <input id="hobbies" name="hobbies" type="text" placeholder="> HOBBIES" required />
+          <button id="submit-btn" type="submit">SIMULATE</button>
+        </form>
+
+        <p class="pipeline">Simulation stack: Gemini scenario engine.</p>
+
+        <div class="capsules">
+          <article>
+            <h3>INPUT LAYERS</h3>
+            <ul>
+              <li>Age, country, and current career</li>
+              <li>Daily habits and lifestyle levers</li>
+              <li>Hobbies and identity anchors</li>
+              <li>Income baseline (optional)</li>
+            </ul>
+          </article>
+          <article>
+            <h3>OUTPUT LAYERS</h3>
+            <ul>
+              <li>Alternate timelines with milestones</li>
+              <li>Future snapshots and narrative beats</li>
+              <li>Income and lifestyle projections</li>
+              <li>Regret probability score</li>
+            </ul>
+          </article>
+          <article>
+            <h3>SHARE MODES</h3>
+            <ul>
+              <li>Auto-generated share link</li>
+              <li>Exportable PNG panel</li>
+              <li>Concise timeline cards</li>
+              <li>Simulation summaries</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="history-panel">
+          <header>
+            <h3>Recent Timelines</h3>
+            <button id="refresh_history_btn" type="button">Refresh</button>
+          </header>
+          <ul id="history_list" class="history-list"></ul>
+        </article>
+      </section>
+
+      <section id="status" class="status" aria-live="polite"></section>
+
+      <section id="results" class="results hidden">
+        <article class="headline-strip reveal">
+          <div>
+            <p id="regret_score" class="critical">--%</p>
+            <span class="badge">REGRET PROBABILITY</span>
+            <p id="summary_line" class="summary"></p>
+            <div class="result-actions">
+              <button id="copy_share_btn" type="button">Copy Share Link</button>
+              <button id="export_png_btn" type="button">Export PNG</button>
+            </div>
+          </div>
+          <div class="integrity">
+            <p>CONTEXT SIGNALS</p>
+            <strong id="context_signal">--</strong>
+            <small id="source_line">Sources: -</small>
+          </div>
+        </article>
+
+        <div class="intel-grid reveal delay-1">
+          <article class="intel-card">
+            <header>
+              <h3>/// TIMELINES</h3>
+              <span>SOURCE: PARALLEL_ENGINE</span>
+            </header>
+            <div id="timeline_cards" class="timeline-cards"></div>
+          </article>
+
+          <article class="intel-card">
+            <header>
+              <h3>/// PROJECTIONS</h3>
+              <span>SOURCE: FORECAST_LAYER</span>
+            </header>
+            <div class="metric-box">
+              <h4>Income Projection</h4>
+              <p id="income_summary">--</p>
+              <div id="income_projection" class="projection-grid"></div>
+            </div>
+            <div class="metric-box">
+              <h4>Lifestyle Projection</h4>
+              <p id="lifestyle_summary">--</p>
+              <div id="lifestyle_projection" class="projection-grid"></div>
+            </div>
+            <div class="metric-box">
+              <h4>Assumptions</h4>
+              <ul id="assumptions" class="list"></ul>
+            </div>
+          </article>
+        </div>
+
+        <article class="report-panel reveal delay-2">
+          <h3>Future Snapshots</h3>
+          <ul id="snapshot_list" class="list"></ul>
+          <h4>Sources</h4>
+          <ul id="sources_list" class="list"></ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="/static/js/app.js?v=20260512"></script>
+  </body>
+</html>
